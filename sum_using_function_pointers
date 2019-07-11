@@ -1,0 +1,22 @@
+#include <stdio.h>
+void sum(void );
+
+struct sum_fun{
+    void (*fun_ptr)(void);
+};
+void sum(void)
+{
+    printf("%s\n",__func__);
+    int i=10;
+    int j=20;
+    int sum_t;
+    sum_t=i+j;
+    printf("SUM of a and b is : %d\n",sum_t);
+}
+
+int main()
+{
+    printf("%s\n",__func__);
+    struct sum_fun add = {sum};
+    return 0;
+}
